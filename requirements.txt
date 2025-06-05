@@ -1,0 +1,4 @@
+flask
+apkutils2
+androguard
+pycryptodome
