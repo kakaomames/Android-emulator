@@ -1,0 +1,33 @@
+-- packagesテーブル：アプリ本体情報
+CREATE TABLE packages (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    package_name TEXT UNIQUE,
+    version_code INTEGER,
+    version_name TEXT,
+    label TEXT,
+    icon_path TEXT,
+    apk_path TEXT
+);
+
+-- activitiesテーブル：アクティビティ情報
+CREATE TABLE activities (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    package_name TEXT,
+    name TEXT,
+    exported INTEGER,
+    intent_filters TEXT
+);
+
+-- permissionsテーブル：要求パーミッション
+CREATE TABLE permissions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    package_name TEXT,
+    name TEXT
+);
+
+-- signaturesテーブル：署名情報
+CREATE TABLE signatures (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    package_name TEXT,
+    cert_sha256 TEXT
+);
